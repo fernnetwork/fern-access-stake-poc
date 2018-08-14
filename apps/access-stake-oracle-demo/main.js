@@ -28,4 +28,4 @@ const transferTokens = async() => {
 
 transferTokens()
 
-setInterval(transferTokens, transferIntervalSeconds)
+setInterval(transferTokens, transferIntervalSeconds * 1000)

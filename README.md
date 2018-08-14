@@ -3,6 +3,8 @@
 ## Setup
 - Install Node.js
 - Install dependencies `npm i`
+- Kovan network node running at `localhost:7545` with `authorityAddress` unlocked
+- Local network node running at `localhost:8545` with the same address unlocked
 
 ## Run Demo
 1. Deploy contracts to local development network
