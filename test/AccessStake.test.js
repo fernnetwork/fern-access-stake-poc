@@ -1,8 +1,5 @@
 'use strict'
-const chai = require('chai')
-const chaiAsPromised = require('chai-as-promised')
-const expect = chai.expect
-chai.use(chaiAsPromised)
+const expect = require('./lib/expect')
 
 const AccessStake = artifacts.require('TestAccessStake')
 const StandardToken = artifacts.require('TestStandardToken')
