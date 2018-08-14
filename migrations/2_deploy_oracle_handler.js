@@ -1,14 +1,12 @@
-const assert = require('assert')
 const migrationConfig = require('./migrationConfig.json')
-
 const AccessStakeOracleHandler = artifacts.require('AccessStakeOracleHandler')
 
 module.exports = (deployer, network) => {
-  const config = migrationConfig[network]
-  assert(!!config, `migration config missing for network: ${network}`)
-
+  const config = migrationConfig[network] || {}
   const { oracleAddress } = config
-  assert(!!oracleAddress, `oracle address missing for network: ${network}`)
-
-  deployer.deploy(AccessStakeOracleHandler, oracleAddress)
+  if (oracleAddress) {
+    deployer.deploy(AccessStakeOracleHandler, oracleAddress)
+  } else {
+    console.warn('AccessStakeOracleHandler has not been deployed as oracle address not specified.')
+  }
 }
