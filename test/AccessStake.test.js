@@ -48,7 +48,7 @@ contract('AccessStake', accounts => {
     expect(Number(userStakeBalance)).to.equal(depositAmount)
   })
 
-  it('throws error if owner attempts to withdraw without notice', async () => {
+  it('throws error when owner attempts to withdraw without notice', async () => {
     try {
       await accessStake.withdraw(depositAmount, { from: owner })
     } catch (err) {
@@ -56,7 +56,7 @@ contract('AccessStake', accounts => {
     }
   })
 
-  it('throws error if user attempts to withdraw an amount greater than the user owns', async () => {
+  it('throws error when user attempts to withdraw an amount greater than the user owns', async () => {
     await accessStake.setCurrentTimestamp(withdrawNoticeTimestamp)
 
     try {
@@ -75,7 +75,7 @@ contract('AccessStake', accounts => {
     expect(Number(releaseTime)).to.equal(tokenReleaseTimestamp)
   })
 
-  it('throws error if owner attempts to withdraw before token is released', async () => {
+  it('throws error when owner attempts to withdraw before token is released', async () => {
     try {
       await accessStake.withdraw(withdrawAmount, { from: owner })
     } catch (err) {
@@ -83,7 +83,7 @@ contract('AccessStake', accounts => {
     }
   })
 
-  it('throws error if owner attempts to withdraw an amount exceeding notice amount', async () => {
+  it('throws error when owner attempts to withdraw an amount exceeding notice amount', async () => {
     // release token
     await accessStake.setCurrentTimestamp(tokenReleaseTimestamp + 1)
     try {
@@ -93,7 +93,7 @@ contract('AccessStake', accounts => {
     }
   })
 
-  it('stake is transferred back to the owner if owner withdraws after token release', async () => {
+  it('stake is transferred back to the owner when owner withdraws after token release', async () => {
     await accessStake.withdraw(withdrawAmount, { from: owner })
 
     const [ userFernBalance, contractFernBalance ] = await Promise.all([
@@ -107,7 +107,7 @@ contract('AccessStake', accounts => {
     expect(Number(contractFernBalance)).to.equal(depositAmount - withdrawAmount)
   })
 
-  it('throws error if own attempts to withdraw twice', async () => {
+  it('throws error when own attempts to withdraw twice', async () => {
     try {
       await accessStake.withdraw(withdrawAmount, { from: owner })
     } catch (err) {
