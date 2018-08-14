@@ -1,0 +1,25 @@
+{
+  "name": "fern-access-stake-poc",
+  "version": "1.0.0",
+  "description": "A PoC of Fern Access Stake Smart contracts.",
+  "scripts": {
+    "compile": "npx truffle compile",
+    "migrate": "npx truffle migrate",
+    "test": "npx truffle test --network test"
+  },
+  "author": "Fern Network <info@fern.network>",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "@appliedblockchain/eslint-config": "^2.3.0",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^5.2.0",
+    "truffle": "^5.0.0-next.5"
+  },
+  "eslintConfig": {
+    "extends": "@appliedblockchain/eslint-config"
+  },
+  "dependencies": {
+    "openzeppelin-solidity": "1.11.0"
+  }
+}
