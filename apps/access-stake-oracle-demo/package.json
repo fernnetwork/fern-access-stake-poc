@@ -1,0 +1,14 @@
+{
+  "name": "fern-access-stake-oracle-demo",
+  "description": "Demo app for testing access stake oracles. Transfer tokens to validators every x seconds to demonstrate balance updates in oracles.",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main"
+  },
+  "author": "Fern Network <info@fern.network>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "web3": "^1.0.0-beta.33"
+  }
+}
