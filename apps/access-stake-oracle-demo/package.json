@@ -1,6 +1,6 @@
 {
   "name": "fern-access-stake-oracle-demo",
-  "description": "Demo app for testing access stake oracles. Transfer tokens to validators every x seconds to demonstrate balance updates in oracles.",
+  "description": "Demo app for demonstrating balance updates using oracles",
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {

@@ -1,6 +1,6 @@
 {
   "name": "fern-access-stake-oracle-poc",
-  "description": "Single purpose oracle for PoC. Used for verifying access stake in a different network",
+  "description": "Single purpose oracle for access stake verification PoC",
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {

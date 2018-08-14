@@ -1,4 +1,7 @@
 'use strict'
+/**
+ * Demo app for demonstrating balance updates using oracles. Transfers tokens to validators every x seconds.
+ */
 const ERC20Token = require('../../build/contracts/ERC20.json')
 const AccessStake = require('../../build/contracts/AccessStake.json')
 

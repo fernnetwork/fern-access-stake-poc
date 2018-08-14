@@ -1,4 +1,7 @@
 'use strict'
+/**
+ * Single purpose oracle for access stake verification PoC. Retrieves balance from Kovan and updates the AccessStakeOracleHandler contract every x minutes.
+ */
 const AccessStake = require('../../build/contracts/AccessStake.json')
 const AccessStakeOracleHandler = require('../../build/contracts/AccessStakeOracleHandler.json')
 
