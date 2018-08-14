@@ -20,10 +20,14 @@ const accessStake = new web3Main.eth.Contract(AccessStake.abi, accessStakeAddres
 const transferIntervalSeconds = 30 // transfer stake every 30 seconds
 
 const transferTokens = async() => {
-  const depositAmount = Math.floor(Math.random() * 10)
-  await fernToken.methods.approve(accessStakeAddress, depositAmount).send({ from: authorityAddress })
-  await accessStake.methods.deposit(depositAmount).send({ from: authorityAddress })
-  console.log(`${authorityAddress} has deposited ${depositAmount} tokens into AccessStake contract.`)
+  try {
+    const depositAmount = Math.floor(Math.random() * 10)
+    await fernToken.methods.approve(accessStakeAddress, depositAmount).send({ from: authorityAddress })
+    await accessStake.methods.deposit(depositAmount).send({ from: authorityAddress })
+    console.log(`${authorityAddress} has deposited ${depositAmount} tokens into AccessStake contract.`)
+  } catch (err) {
+    console.error(`Error depositing token into stake contract: ${err.message}`)
+  }
 }
 
 transferTokens()
